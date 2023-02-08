@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body onload="renderListStudent()">
+    <div class="container">
+        <!-- Form -->
+        <div class="form-student">
+            <h3>Student's Information</h3>
+            <label>Full Name</label>
+            <input type="text" id="fullname" placeholder="Fill your name">
+            <span id="name-error"></span>
+            <br>
+            <label>Email</label>
+            <input type="text" id="email">
+            <span id="email-error"></span>
+            <br>
+            <label>Phone Number</label>
+            <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="phoneNum"></input>
+            <span id="phoneNum-error"></span>
+            <br>
+            <label>Address</label>
+            <input type="text" id="address">
+            <span id="address-error"></span>
+            <br>
+            <label>Gender</label>
+            <input type="radio" id="male" name="gender" value="1">
+            Male
+            <input type="radio" id="female" name="gender" value="2">
+            Female
+            <span id="gender-error"></span>
+            <br>
+            <label>&nbsp;</label>
+            <button onclick="save()">Save</button>
+        </div>
+
+        <!-- List -->
+        <div class="list-student" id="list-student">
+            <h3>Student List</h3>
+            <table border="1" width="500px" id="grid-students">
+            </table>
+        </div>
+    </div>
+
+
+    <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
+    <script src="./index.js"></script>
+</body>
+</html>
